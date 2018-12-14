@@ -5,7 +5,8 @@ This file has the following sections:
 1. Setup
    - Pre-requisites
    - Docker installation
-2.
+2. Scenario deployment
+3. Stop and remove the scenario
 
 ## Setup
 
@@ -15,7 +16,7 @@ Taking into account that the devs are using Mac OS as specified in the readme:
 
 ### Pre-requisites
 
-The user may need to install Docker first. You can skip this section if the following command on your terminal shows that you've Docker already installed.
+The user may need to install Docker first. You can skip this section if the following command on your terminal shows that you've Docker already installed. You can also look for a whale on your top status bar.
 
 `docker -v`
 
@@ -48,7 +49,7 @@ Remember to uninstall VirtualBox if its version is not compatible with Docker.
 
 Now we can install Docker.
 
-1. Please start downloading it from [here](https://hub.docker.com/editions/community/docker-ce-desktop-mac).
+1. Please start downloading it from [here](https://store.docker.com/editions/community/docker-ce-desktop-mac).
 
 2. Run your `Docker.dmg` file in order to start the installation. Follow its indications to install it.
 
@@ -56,4 +57,25 @@ Now we can install Docker.
 
 4. Finally, check in the top status bar that Docker is running. A whale should be there while Docker is running.
 
-## 
+## Scenario deployment
+
+Now that we've Docker ready, just run `docker-compose` within the Deliverables folder. With `-d` option we'll make it in background.
+
+```
+cd ./Deliverables
+docker-compose up -d
+```
+
+This way, images will be build if necessary, then containers will be executed and your development environment will be ready.
+
+## Stop and remove the scenario
+
+To stop your environment just run:
+
+`docker-compose stop`
+
+And in order to remove the containers after they are stopped:
+
+`docker-compose rm`
+
+Please, notice that volumes attached to containers are not removed by default.
