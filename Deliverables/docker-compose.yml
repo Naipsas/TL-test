@@ -25,6 +25,6 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: problemthree
     ports:
-      - 3306 #- "9906:3306"
+      - "3306:3306"
   redis:
     build: ./Dockerfiles/redis

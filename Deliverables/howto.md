@@ -6,6 +6,7 @@ This file has the following sections:
    - Pre-requisites
    - Docker installation
 2. Scenario deployment
+   - Composer use
 3. Stop and remove the scenario
 
 ## Setup
@@ -67,6 +68,16 @@ docker-compose up -d
 ```
 
 This way, images will be build if necessary, then containers will be executed and your development environment will be ready.
+
+### Composer use
+
+To use composer, we invoke it each time that we need to generate a vendor. Go to your application folder on the host, and execute:
+
+```
+docker run --rm --interactive --tty     --volume $PWD:/app     --user $(id -u):$(id -g)     composer:latest install --ignore-platform-reqs --no-scripts
+```
+
+Parameters for this command includes non-root execution as `Composer` ask for, and `no scripts` options to avoid using some dependencies like git that are not available within the container.
 
 ## Stop and remove the scenario
 
