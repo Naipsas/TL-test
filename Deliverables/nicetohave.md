@@ -34,6 +34,12 @@ Original HTTP connections have been redirected using HTTP 302, being 301 error a
 
 ## phpunit tests inside a container
 
+To use `phpunit`, we invoke it each time we want to run our test, the same way we were using `composer`. Go to your app folder with `phpunit.xml` and run:
+
+`docker run -v $(pwd):/app --rm phpunit/phpunit tests`
+
+In our case, we should look for `./Deliverables/Dockerfiles/backend/www`. The `tests` at the end of the command is where the tests are located, and the folder from where we execute the container and we provide as `/app` folder is where `phpunit.xml` file is.
 
 ## xdebug inside the backend container
 
+Has been installed on the backend cointaer following [official docs](https://xdebug.org/docs/install) through PECL. Creating an empty php file which calls `phpinfo()`, we've confirmed that xdebug is running an ready to be used.
