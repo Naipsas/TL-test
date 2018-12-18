@@ -60,7 +60,7 @@ Now we can install Docker.
 
 ## Scenario deployment
 
-Now that we've Docker ready, just run `docker-compose` within the Deliverables folder. With `-d` option we'll make it in background.
+Now that we've Docker ready, just run `docker-compose` within the Deliverables folder (please, clone it completely. You can remove the `vendor` folder but then you have to run `composer` again for your app). With `-d` option we'll make it in background.
 
 ```
 cd ./Deliverables
